@@ -31,6 +31,11 @@ The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-P
 ### Understanding the Bayesian formula
 
 #### Chapter 4 - Likelihoods
+<p float="left" align='center'>  
+  <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/4%20-%20Likelihood/4.1%20-%20Blog%20blues/Poisson%20model/MLE%20estimate%20-%20Evaluate%20model/results/generated_time_between_beer_visits.png' width="31%" height="31%"
+ /><img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/4%20-%20Likelihood/4.1%20-%20Blog%20blues/Poisson%20model/MLE%20estimate%20-%20Mean%20visit%20rate/results/likelihood_as_function_of_rate_between_first_time_visits_blog.png' width="35%" height="35%"
+ />
+  
 
 #### Chapter 5 - Priors
 
