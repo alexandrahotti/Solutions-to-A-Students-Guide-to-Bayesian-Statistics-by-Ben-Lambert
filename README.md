@@ -9,6 +9,7 @@ This repository contains my solutions to the assignments in the book: "A Student
 The code for this section can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/tree/master/2%20-%20The%20subjective%20worlds%20of%20Frequentist/2.3%20-%20Model%20choice/Q%202.3.1%20-%202.3.2)
 The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/2%20-%20The%20subjective%20worlds%20of%20Frequentist/2.3%20-%20Model%20choice/solutions_chapter_2.pdf)
 
+##### Excerpt of some results
 <p float="left" align='center'>  
   <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/2%20-%20The%20subjective%20worlds%20of%20Frequentist/2.3%20-%20Model%20choice/Q%202.3.1%20-%202.3.2/results/polynomial_fit.png' width="30%" height="30%"
  />
@@ -17,6 +18,7 @@ The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-P
 The code for this section can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/tree/master/3%20-%20Probability%20-%20the%20nuts%20and%20bolts%20of%20Bayesian%20inference/3.8%20-%20Breast%20cancer%20revisited)
 The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/3%20-%20Probability%20-%20the%20nuts%20and%20bolts%20of%20Bayesian%20inference/solutions_chap_3.pdf)
 
+##### Excerpt of some results
 <p float="left" align='center'>  
   <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/3%20-%20Probability%20-%20the%20nuts%20and%20bolts%20of%20Bayesian%20inference/3.8%20-%20Breast%20cancer%20revisited/results/prob_cancer_given_pos_test_prevalence.png' width="31%" height="31%"
  />
@@ -33,7 +35,7 @@ The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-P
 #### Chapter 4 - Likelihoods
 The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/4%20-%20Likelihood/solutions_chapter_4.pdf)
 
-
+##### Excerpt of some results
 <p float="left" align='center'>  
   <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/4%20-%20Likelihood/4.1%20-%20Blog%20blues/Poisson%20model/MLE%20estimate%20-%20Evaluate%20model/results/generated_time_between_beer_visits.png' width="31%" height="31%"
  /><img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/4%20-%20Likelihood/4.1%20-%20Blog%20blues/Poisson%20model/MLE%20estimate%20-%20Mean%20visit%20rate/results/likelihood_as_function_of_rate_between_first_time_visits_blog.png' width="35%" height="35%"
