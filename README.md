@@ -28,8 +28,6 @@ The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-P
  />
 
 
-
-
 ### Understanding the Bayesian formula
 
 #### Chapter 4 - Likelihoods
@@ -47,6 +45,12 @@ The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-P
 
 
 #### Chapter 6 - The devil is in the denominator
+The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/6%20-%20The%20devil%20is%20in%20the%20denominator/solutions_chapter_6.pdf)
+
+##### Excerpt of some results
+<p float="left" align='center'>  
+  <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/6%20-%20The%20devil%20is%20in%20the%20denominator/results/NB_posterior.png' width="47%" height="47%"
+ />
 
 #### Chapter 7 - The posterior - The goal of Bayesian inference
 
