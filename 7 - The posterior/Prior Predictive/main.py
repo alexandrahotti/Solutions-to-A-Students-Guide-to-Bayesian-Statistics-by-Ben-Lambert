@@ -10,6 +10,7 @@ import statsmodels.api as sm
 
 import statistics
 from sklearn.metrics import mean_squared_error
+import math
 
 
 def loadData(data_path):
@@ -96,7 +97,7 @@ def sample_alpha_prior():
         A normal distribution centered at 0 with a std of 10.
     """
 
-    return np.random.normal(7, 3, 1)
+    return np.random.normal(0, 10, 1)
 
 def sample_beta_prior():
     """
@@ -104,7 +105,7 @@ def sample_beta_prior():
         A normal distribution centered at 0 with a std of 10.
     """
 
-    return np.random.normal(-0.5, 1, 1)
+    return np.random.normal(0, 10, 1)
 
 def sample_sigma_prior():
     """
@@ -112,9 +113,61 @@ def sample_sigma_prior():
         A half normal distribution centered at 0 with a std of 5.
     """
 
-    return stats.halfnorm.rvs(0, 1, 1)
+    return stats.halfnorm.rvs(0, 5, 1)
 
-def estimate_prior_predictive_distribution(gdps):
+
+def compute_log_likelihoods(gdps, mortalities, sigma, alpha, beta):
+    """
+        Computes the log likelihood.
+    """
+    # A lower and upper limit for the mean visit rate per minute.
+    # gdp_lower = np.min(gdps)
+    # gdp_upper = np.max(gdps)
+    # n = 100
+    #
+    # gdp_range = np.linspace(
+    #     gdp_lower, gdp_lower, n)
+
+    log_likelihoods = gaussian_log_likelihood(gdps, mortalities, n, sigma, alpha, beta)
+    print(len(log_likelihoods))
+    input(len(mortalities))
+    return log_likelihoods
+
+
+def gaussian_log_likelihood(gdps, mortalities, n, sigma, alpha, beta):
+    """
+        Computes the log likelihood between iid samples with gaussian pdf:s
+        In accordance with https://en.wikipedia.org/wiki/Maximum_likelihood_estimation
+    """
+    print(mortalities)
+    input()
+    print("#####")
+    print(gdps)
+    print("#####alpha:")
+    print(alpha)
+    print("#####beta:")
+    print(beta)
+    print("#####mus:")
+    mus = alpha + gdps * beta
+    print(mus)
+    print("#####diff:")
+    print(mortalities - mus)
+    input()
+    print("#####sqrtdiff:")
+    print((mortalities - mus)**2)
+    input()
+    print("##### diffsumm:")
+    diff_sum = np.sum((mortalities - mus)**2)
+    print(diff_sum)
+    print("#####log_likelihoods:")
+
+    log_likelihoods = (-n/2)*np.log(2*math.pi*sigma**2) -(1/(2*math.pi*sigma**2)) - diff_sum
+    print(np.exp(log_likelihoods))
+    print("#####")
+    input()
+    return log_likelihoods
+
+def estimate_prior_predictive_distribution(gdps, mortalities):
 
     mortalities_prior_predictive = []
     no_iterations = 50
@@ -124,22 +177,26 @@ def estimate_prior_predictive_distribution(gdps):
         alpha_i = sample_alpha_prior()[0]
         beta_i = sample_beta_prior()[0]
         sigma_i = sample_sigma_prior()[0]
-        
+
         """ Now condition the likelihood on the sampled parameters and then
             generate a sample of the mortality rate from the likelihood. """
-        mortalities_model_i = []
-        i = 0
-        for gdp in gdps:
-            mean_i = alpha_i + beta_i * gdp
-            mortality_i = np.random.normal(mean_i, sigma_i, 1)[0]
-            # print('mor i ',mortality_i)
-            mortalities_model_i.append(mortality_i)
-            if i == 0:
-                print(mortality_i)
-                i = 1
-        i = 0
 
-        mortalities_prior_predictive.append(mortalities_model_i)
+        log_likelihoods = gaussian_log_likelihood(gdps, mortalities, len(mortalities), sigma_i, alpha_i, beta_i)
+        print(log_likelihoods)
+        input()
+        # mortalities_model_i = []
+        # i = 0
+        # for gdp in gdps:
+        #     mean_i = alpha_i + beta_i * gdp
+        #     mortality_i = np.random.normal(mean_i, sigma_i, 1)[0]
+        #     # print('mor i ',mortality_i)
+        #     mortalities_model_i.append(mortality_i)
+        #     if i == 0:
+        #         print(mortality_i)
+        #         i = 1
+        # i = 0
+        #
+        # mortalities_prior_predictive.append(mortalities_model_i)
 
 
 def main():
@@ -154,7 +211,7 @@ def main():
     # Remove data points with missing data i.e. NaN values.
     gdps, mortalities = remove_missing_data(gdp_data, mortality_data)
 
-    estimate_prior_predictive_distribution(np.log(gdps))
+    estimate_prior_predictive_distribution(np.log(gdps), np.log(mortalities))
 
 
 if __name__ == '__main__':
