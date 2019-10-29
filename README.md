@@ -56,7 +56,7 @@ The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-P
 
 ### Analytic Bayesian methods
 
-#### Chapter 8 - An introduction to distributions for the mathematically uninclined
+#### Chapter 8 - Distributions
 
 #### Chapter 9 - Conjugate priors
 
