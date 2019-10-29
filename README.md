@@ -58,6 +58,12 @@ The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-P
 
 #### Chapter 8 - Distributions
 
+##### Excerpt of some results
+<p float="left" align='center'>  
+  <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/8%20-%20Distributions/Election%20Likelihoods/results/multinomial_likelihood_pA_pB.png' width="47%" height="47%"
+ />
+
+
 #### Chapter 9 - Conjugate priors
 
 #### Chapter 10 - Evaluation of model fit and hypothesis testing
