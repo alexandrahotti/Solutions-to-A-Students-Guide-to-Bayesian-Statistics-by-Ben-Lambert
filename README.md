@@ -67,6 +67,11 @@ The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-P
 
 
 #### Chapter 9 - Conjugate priors
+##### Excerpt of some results
+<p float="left" align='center'>
+  <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/9%20-%20Conjugate%20Priors/Lyme%20disease/results/posterior%20predictive/posterior_predictive_estimation.png' width="47%" height="47%"
+ />
+
 
 #### Chapter 10 - Evaluation of model fit and hypothesis testing
 
