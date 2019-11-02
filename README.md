@@ -59,8 +59,10 @@ The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-P
 #### Chapter 8 - Distributions
 
 ##### Excerpt of some results
-<p float="left" align='center'>  
-  <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/8%20-%20Distributions/Election%20Likelihoods/results/multinomial_likelihood_pA_pB.png' width="47%" height="47%"
+<p float="left" align='center'>
+  <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/8%20-%20Distributions/Election%20Models/results/Multinomial%20Likelihood%20less%20data/Dirichlet(10%2C10%2C10)%20prior/multinomial_likelihood.png' width="47%" height="47%"
+ /><img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/8%20-%20Distributions/Election%20Models/results/Multinomial%20Likelihood%20less%20data/Dirichlet(10%2C10%2C10)%20prior/prior_dir_10_10_10.png' width="47%" height="47%"
+ /><img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/8%20-%20Distributions/Election%20Models/results/Multinomial%20Likelihood%20less%20data/Dirichlet(10%2C10%2C10)%20prior/posterior_dir_10_10_10.png' width="57%" height="57%"
  />
 
 
