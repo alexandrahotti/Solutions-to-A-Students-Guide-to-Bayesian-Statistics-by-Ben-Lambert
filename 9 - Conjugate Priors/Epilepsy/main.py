@@ -11,17 +11,21 @@ def main():
 
     epilepsy_counts = get_column(epilepsy_data["x"])
 
-    print(len(epilepsy_counts))
-    """ Q 9.2.3 The Gamma Posterior """
     a = 4
     b = 0.25
 
     eilepsy_model = Epilepsy_model(a, b)
 
-    posterior, theta_range = eilepsy_model.posterior_gamma(epilepsy_counts)
+    """ Q 9.2.3 The Gamma Posterior """
+    # posterior, theta_range = eilepsy_model.posterior_gamma(epilepsy_counts)
+    #
+    # plotter(theta_range, posterior, "Gamma(a + " +r'$\sum^n_{i=1}(x_i)$'+", b + n) posterior over " + r'$\theta$', r'$\theta$', "pdf")
 
-    plotter(theta_range, posterior, "Gamma posterior over theta", "theta", "pdf")
 
+    """ Q 9.2.5 The Gamma Posterior Predictive distribution """
+    posterior_NB, theta_range = eilepsy_model.posterior_predictive_gamma(epilepsy_counts)
+
+    plotter(theta_range, posterior_NB, "Gamma(a + " +r'$\sum^n_{i=1}(x_i)$'+", b + n) posterior over " + r'$\theta$', r'$\theta$', "pdf")
 
 if __name__ == '__main__':
     main()
