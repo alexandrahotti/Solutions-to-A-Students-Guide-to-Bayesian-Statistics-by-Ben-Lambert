@@ -257,8 +257,8 @@ def random_walk_metropolis_more_data(step_sz):
 
     a = 1
     b = 1
-    k = 6+3+2+8+25
-    n = 100*5
+    k_list = [6, 3, 2, 8, 25]
+    n = 100
 
     theta_posterior_estimate = []
 
@@ -268,15 +268,18 @@ def random_walk_metropolis_more_data(step_sz):
         theta_prop = get_list_val(theta_proposed(theta_curr, step_sz))
 
         prior_prop = get_list_val(scipy.stats.beta.pdf(theta_prop, a, b))
-        posterior_prop = get_list_val(scipy.stats.beta.pdf(theta_prop, a + k, b + n - k))
+        #posterior_prop = get_list_val(scipy.stats.beta.pdf(theta_prop, a + k, b + n - k))
 
         prior_curr = get_list_val(scipy.stats.beta.pdf(theta_curr, a, b))
-        posterior_curr = get_list_val(scipy.stats.beta.pdf(theta_curr, a + k, b + n - k))
+        #posterior_curr = get_list_val(scipy.stats.beta.pdf(theta_curr, a + k, b + n - k))
 
+        # Byt till loop
+        likelihood_prop = 1
+        likelihood_curr = 1
 
-        likelihood_prop = get_list_val(scipy.stats.binom.pmf(k, n, theta_prop, loc=0))
-        likelihood_curr = get_list_val(scipy.stats.binom.pmf(k, n, theta_curr, loc=0))
-
+        for k in k_list:
+            likelihood_prop *= get_list_val(scipy.stats.binom.pmf(k, n, theta_prop, loc=0))
+            likelihood_curr *= get_list_val(scipy.stats.binom.pmf(k, n, theta_curr, loc=0))
 
 
         if likelihood_prop*prior_prop >= likelihood_curr*prior_curr:
@@ -308,6 +311,7 @@ def posterior_pred_more_data():
     step_sz = 0.1
     posterior_est = random_walk_metropolis_more_data(step_sz)
 
+    print(posterior_est)
     posterior_hist = np.histogram(posterior_est, bins=100)
     posterior_dist = scipy.stats.rv_histogram(posterior_hist)
 
@@ -564,9 +568,9 @@ def main():
     # plt.show()
 
     # Q 13.1.16
-    #posterior_pred_more_data()
+    posterior_pred_more_data()
 
     """ Q 13.1.17-21 """
     # visulize_prior_MH()
-    metropolis_hastings()
+    # metropolis_hastings()
 main()
