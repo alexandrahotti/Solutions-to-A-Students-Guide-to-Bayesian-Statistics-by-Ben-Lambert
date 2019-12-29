@@ -70,6 +70,25 @@ The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-P
 
 #### Chapter 13 - Random Walk Metropolis
 
+##### Modeling presence of Borrelia amongst Ticks
+
+###### Symetric Kernel - Random Walk Metropolis
+Using a Binomial likelihood, a Beta prior and an symetric Normal jumping kernel.
+
+<p float="left" align='center'>  
+  <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/13%20-%20Random%20Walk%20Metropolis/13_1_Borrelia/results/symmetric_jumping_kernel/rmw_100_chains_burn_in.png' width="47%" height="47%"
+ />
+
+###### Assymetric Kernel - Metropolis Hastings
+Using a Beta-Binomial likelihood, a Gamma prior and an assymetric log-Normal jumping kernel.
+<p float="left" align='center'>  
+  <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/13%20-%20Random%20Walk%20Metropolis/13_1_Borrelia/results/assymetric_jumping_kernel/joint_prior.png' width="47%" height="47%"
+ /> <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/13%20-%20Random%20Walk%20Metropolis/13_1_Borrelia/results/assymetric_jumping_kernel/posterior_alpha_beta_joint.png' width="47%" height="47%"
+ /><img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/13%20-%20Random%20Walk%20Metropolis/13_1_Borrelia/results/assymetric_jumping_kernel/chains.png' width="47%" height="47%"
+ />
+
+
+
 #### Chapter 14 - Gibbs Sampling
 
 #### Chapter 15 - Hamiltonian Monte Carlo
