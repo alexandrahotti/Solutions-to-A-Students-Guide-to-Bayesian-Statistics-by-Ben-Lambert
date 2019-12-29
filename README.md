@@ -87,8 +87,17 @@ Using a Beta-Binomial likelihood, a Gamma prior and an assymmetric log-Normal ju
  /><img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/13%20-%20Random%20Walk%20Metropolis/13_1_Borrelia/results/assymetric_jumping_kernel/chains.png' width="47%" height="47%"
  />
 
-
-
+##### Modeling Mosquito Death Rate
+Using a Poisson Likelihood, a Gamma prior, a Beta Prior, a log-Normal jumping kernel and a beta jumping kernel.
+<p float="left" align='center'>  
+  <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/13%20-%20Random%20Walk%20Metropolis/13_3_Malarial_mosquitoes/results/likelihood.png' width="47%" height="47%"
+ /><img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/13%20-%20Random%20Walk%20Metropolis/13_3_Malarial_mosquitoes/results/chain%204/posterior.png' width="47%" height="47%"
+ /><img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/13%20-%20Random%20Walk%20Metropolis/13_3_Malarial_mosquitoes/results/chain%204/psi_post.png' width="47%" height="47%"
+ /><img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/13%20-%20Random%20Walk%20Metropolis/13_3_Malarial_mosquitoes/results/chain%204/mu_post.png' width="47%" height="47%"
+ />
+  
+  
+  
 #### Chapter 14 - Gibbs Sampling
 
 #### Chapter 15 - Hamiltonian Monte Carlo
