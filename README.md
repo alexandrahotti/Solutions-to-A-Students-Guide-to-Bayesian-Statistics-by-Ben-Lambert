@@ -69,6 +69,8 @@ The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-P
 #### Chapter 12 - Leaving conjugates behind: Markov chain Monte Carlo
 
 #### Chapter 13 - Random Walk Metropolis
+The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/13%20-%20Random%20Walk%20Metropolis/solutions_chapter_13.pdf)
+
 
 ##### Modeling presence of Borrelia amongst Ticks
 
@@ -99,6 +101,27 @@ Using a Poisson Likelihood, a Gamma prior, a Beta Prior, a log-Normal jumping ke
   
   
 #### Chapter 14 - Gibbs Sampling
+The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/14%20-%20Gibbs%20Sampling/solutions_chapter_14.pdf)
+
+##### The sensitivity and specificity of a test for a disease - Gibbs Sampling
+
+<p float="left" align='center'>  
+  <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/14%20-%20Gibbs%20Sampling/14_1_The%20sensitivity_and_specificity_of_a_test_for_a_disease/results/Q_14_1_7/C_posterior.png' width="47%" height="47%"
+ />
+
+##### Coal mining disasters in the UK - Gibbs Sampling
+Using Gibbs sampling to estimate the point in time when legislative and societal changes caused a reduction in coal mining disasters in
+the UK. The number of disasters per year pre and post legislations were modeled using Poisson Likelihoods: Possion(lambda_1), Possion(lambda_2) with Gamma priors. The point in time when the new legislations were enacted is called n.
+
+<p float="left" align='center'>  
+  <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/14%20-%20Gibbs%20Sampling/14_2_%20Coal_mining_disasters_in_the_UK/results/disasters_yr.png' width="47%" height="47%"
+ />
+  <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/14%20-%20Gibbs%20Sampling/14_2_%20Coal_mining_disasters_in_the_UK/results/n_posterior_gibbs.png' width="47%" height="47%"
+ />
+    <img src='https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/14%20-%20Gibbs%20Sampling/14_2_%20Coal_mining_disasters_in_the_UK/results/lambda1_2_posterior_gibbs.png' width="47%" height="47%"
+ />
+
+
 
 #### Chapter 15 - Hamiltonian Monte Carlo
 
