@@ -110,7 +110,8 @@ def gibbs_sampler(X):
 
     no_iter = 10000
     """ initilization of parameters """
-    n_i = 40#get_list_val(np.random.randint(0, len(X)-1, 1))
+    n_i = 40#get_list_val(np.random.randint(0, len(X) - 1, 1))
+
     lambda1_i = 3
     lambda2_i = 1
 
@@ -168,12 +169,10 @@ def main():
     year = get_column(coal_data["x"])
     disasters = get_column(coal_data["y"])
 
+    """ Visulize the data """
     # plot_time_series_data(year, disasters)
 
-    # print(n_conditional(40, disasters, 0.1, 0.2))
-
-    #n_categorical( disasters, 3,1, 1000 )
-
+    """  The Gibbs sampling """
     n_posterior, lambda1_posterior, lambda2_posterior = gibbs_sampler(disasters)
 
     # The 95% credible intervals
