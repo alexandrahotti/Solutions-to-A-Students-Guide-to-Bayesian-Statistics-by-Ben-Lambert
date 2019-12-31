@@ -47,26 +47,116 @@ def plot_time_series_data(year, disasters):
     plt.show()
 
 
-def n_conditional(n, X, lambda1, lambda2):
+def ni_conditional(n, X, lambda1, lambda2):
+
     N = len(X)
-    X_1_n_sum = np.sum(X[1:n])
+    X_1_n_sum = np.sum(X[0:n])
     X_n_N_sum = np.sum(X[n+1:N])
 
-    if (n == N):
+
+    if (n == N-1):
         return 0
     else:
-        return lambda1**(X_1_n_sum)*np.exp(-n*lambda1)* lambda2**(X_n_N_sum)*np.exp(-(N-n)*lambda2)
+        return (lambda1**(X_1_n_sum))*(np.exp(-n*lambda1))* (lambda2**(X_n_N_sum))*(np.exp(-(N-n)*lambda2))
 
-
-def n_categorical( X, lambda1, lambda2 ):
+def n_conditional(X, lambda1, lambda2 ):
 
     N = len(X)
     n_posterior_vals = []
 
     for n in range(N):
-        n_posterior_vals.append(n_conditional(n, X, lambda1, lambda2))
+        n_posterior_vals.append(ni_conditional(n, X, lambda1, lambda2))
 
-    return np.argmax(np.random.multinomial( 1000, n_posterior_vals/np.sum(n_posterior_vals)))
+
+    n_posterior = n_posterior_vals/np.sum(n_posterior_vals)
+
+    return n_posterior
+
+def n_categorical( X, lambda1, lambda2, no_samples ):
+
+    n_posterior = n_conditional(X, lambda1, lambda2 )
+
+    samples = []
+
+
+    for sample in range(no_samples):
+        n_sample = np.argmax(np.random.multinomial( 1, n_posterior ))
+
+    return n_sample
+
+
+def get_list_val(possible_list):
+
+    try:
+        val = possible_list[0]
+    except:
+        val = possible_list
+
+    return val
+
+
+def sample_lambda2(a,b,X,n):
+    N = len(X)
+    alpha = a + np.sum(X[n:N])
+    beta = b + N - n
+    return get_list_val(np.random.gamma(alpha, 1/beta, 1))
+
+def sample_lambda1(a,b,X,n):
+    alpha = a + np.sum(X[0:n])
+    beta = b + n
+    return get_list_val(np.random.gamma(alpha, 1/beta, 1))
+
+def gibbs_sampler(X):
+
+    no_iter = 10000
+    """ initilization of parameters """
+    n_i = 40#get_list_val(np.random.randint(0, len(X)-1, 1))
+    lambda1_i = 3
+    lambda2_i = 1
+
+    a = 1
+    b = 1
+
+    n_posterior = []
+    lambda1_posterior = []
+    lambda2_posterior = []
+
+
+    for it in range(no_iter):
+        """ Categorical sampling of n_i"""
+        n_i = n_categorical( X, lambda1_i, lambda2_i, 1 )
+        lambda1_i = sample_lambda1(a,b,X,n_i)
+        lambda2_i = sample_lambda2(a,b,X,n_i)
+
+        n_posterior.append(n_i)
+        lambda1_posterior.append(lambda1_i)
+        lambda2_posterior.append(lambda2_i)
+
+
+    return n_posterior, lambda1_posterior, lambda2_posterior
+
+def credible_interval(param_text, samples):
+    """ Credible intervals of 95 % around the highest density regions. """
+    print("Credible intervals of 95 % around the highest density regions")
+    print(param_text, pymc3.stats.hpd(samples, alpha=0.05))
+
+def plot_1D_density(samples, title_txt, c):
+    """ plots a 1D density from a sampled range."""
+
+    sns.distplot(samples, hist=True,
+                 kde=True, bins=int(20), color=c)
+    plt.title(title_txt)
+    plt.show()
+
+
+def plot_joint_density(val1, val2):
+    """ plots a 2D joint density from 2 sampled ranges."""
+
+    df2 = pd.DataFrame({r"$\lambda_1$": val1,
+                        r"$\lambda_2$": val2})
+
+    sns.jointplot(data=df2, x=r"$\lambda_1$", y=r"$\lambda_2$", kind='kde', color="red")
+    plt.show()
 
 
 def main():
@@ -82,7 +172,15 @@ def main():
 
     # print(n_conditional(40, disasters, 0.1, 0.2))
 
-    print(n_categorical( disasters, 3 , 1 ))
+    #n_categorical( disasters, 3,1, 1000 )
+
+    n_posterior, lambda1_posterior, lambda2_posterior = gibbs_sampler(disasters)
+
+    # The 95% credible intervals
+    credible_interval('n: ', np.array(n_posterior))
+
+    plot_joint_density(lambda1_posterior, lambda2_posterior)
+    plot_1D_density(n_posterior, 'n posterior', 'blue')
 
 if __name__ == '__main__':
     main()
