@@ -68,7 +68,7 @@ The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-P
 
 #### Chapter 12 - Leaving conjugates behind: Markov chain Monte Carlo
 
-#### Chapter 13 - Random Walk Metropolis
+#### Chapter 13 - Metropolis Hastings
 The report can be found: [HERE](https://github.com/alexandrahotti/Solutions-to-Problems-in-Bayesian-Statistics/blob/master/13%20-%20Random%20Walk%20Metropolis/solutions_chapter_13.pdf)
 
 
