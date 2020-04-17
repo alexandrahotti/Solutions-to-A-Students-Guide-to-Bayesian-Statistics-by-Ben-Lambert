@@ -1,6 +1,12 @@
 # Solutions-to-Problems-in-Bayesian-Statistics
 This repository contains my solutions to the assignments in the book: "A Student’s Guide to Bayesian Statistics" by Ben Lambert. I will update the repository with my solutions continuously.
 
+Each chapter of the book has its corresponding folder in this repository. These solutions consist of Python code as well as pdfs. 
+
+Let me know if you have any questions or would like to discuss a certain solution or assignment!
+
+
+
 ## Content
 
 ### An introduction to Bayesian inference
