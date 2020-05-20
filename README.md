@@ -3,7 +3,7 @@ This repository contains my solutions to the assignments in the book: "A Student
 
 Each chapter of the book has its corresponding folder in this repository. These solutions consist of Python code as well as pdfs. 
 
-Let me know if you have any questions or would like to discuss a certain solution or assignment!
+Let me know (by posting an issue or via email: hotti@kth.se) if you have any questions or would like to discuss a certain solution or assignment!
 
 
 
